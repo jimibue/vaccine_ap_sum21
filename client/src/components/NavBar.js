@@ -10,6 +10,7 @@ const Navbar =()=> {
           <Link to='/things'>Things</Link>
           <Link to='/kat'>Kat</Link>
 
+          <Link to='/james'>James</Link>
       </div>
     );
 }
