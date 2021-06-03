@@ -20,6 +20,7 @@ function App() {
         <Route exact path="/ati" component={Ati} />
         <Route exact path='/landon' component={Landon} />
         <Route exact path="/james" component={James} />
+        bug here
       </Switch>
     </>
   );
