@@ -6,5 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# delete this as jon
+# not deleting as SAlly
 Thing.create(name:'Thing 1')
 Thing.create(name:'Thing 2')
+
+
+Hospital.destroy_all
+
+Hospital.create(name:"U of U", address:'123 manin')
+Hospital.create(name:"U of Y", address:'321 manin')
