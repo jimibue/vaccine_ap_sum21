@@ -16,5 +16,8 @@ Bug.destroy_all
 
 Bug.create(name:'Covid')
 Bug.create(name:'Sars')
+Bug.create(name:'MERS')
+Bug.create(name:'FLU')
+Bug.create(name:'YOYOS')
 
 
