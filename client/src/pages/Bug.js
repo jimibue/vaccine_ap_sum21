@@ -7,6 +7,7 @@ import { useParams, useHistory, Link } from 'react-router-dom';
 
 const Bug = () => {
     const [bug,setBug] = useState({})
+    const [vaccines, setVaccines] = useState([])
     let { id } = useParams();
     const history = useHistory()
     
@@ -17,8 +18,15 @@ const Bug = () => {
     const getBug = async()=>{
         try {
             let res = await axios.get(`/api/bugs/${id}`)
-            console.log(res)
+            let res1 = await axios.get(`/api/bugs/${id}/vaccines`)
             setBug(res.data)
+            setVaccines(res1.data)
+
+            // another way with custom api call
+            // let res2 = await axios.get(`/api/bugs_and_vaccines/${id}`)
+            // setBug(res2.data.bug)
+            // setVaccines(res2.data.vaccines)
+       
         } catch (err) {
             alert(err)
             console.log('err')
@@ -53,6 +61,11 @@ const Bug = () => {
             </div>
             <h1>Vaccines</h1>
             <p>ToDo list vaccines</p>
+            { vaccines.map( v => (
+                <div>
+                    <h1>{v.name}</h1>
+                </div>
+            ))}
         </div>
     )
 } 

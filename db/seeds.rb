@@ -12,9 +12,16 @@ Hospital.destroy_all
 
 Hospital.create(name:"U of U", address:'123 manin')
 Hospital.create(name:"U of Y", address:'321 manin')
+
 Bug.destroy_all
 
-Bug.create(name:'Covid')
+covid = Bug.create(name:'Covid')
+
+covid.vaccines.create(name:'pfizer', maker:'yo')
+covid.vaccines.create(name:'moderna', maker:'yo')
+covid.vaccines.create(name:'amazon', maker:'yo')
+
+
 Bug.create(name:'Sars')
 Bug.create(name:'MERS')
 Bug.create(name:'FLU')

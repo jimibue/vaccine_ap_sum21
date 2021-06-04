@@ -1,5 +1,5 @@
 class Api::BugsController < ApplicationController
-    before_action :set_bug, only: [:show, :update, :destroy]
+    before_action :set_bug, only: [:show, :update, :destroy, :bug_with_vaccines]
 
     def index
         render json: Bug.all
@@ -7,6 +7,10 @@ class Api::BugsController < ApplicationController
 
     def show
         render json: @bug
+    end
+
+    def bug_with_vaccines
+        render json: {bug: @bug, vaccines: @bug.vaccines}
     end
 
     def create
