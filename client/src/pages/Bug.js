@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react'
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 // TWO ways to do this, I could pass the bug via react router
 // Or axios call here
@@ -8,6 +8,7 @@ import { useParams } from 'react-router-dom';
 const Bug = () => {
     const [bug,setBug] = useState({})
     let { id } = useParams();
+    const history = useHistory()
     
     useEffect(()=>{
         getBug()
@@ -29,7 +30,7 @@ const Bug = () => {
                <h1>{bug.name}</h1>
                <div style={styles.btnContainer}>
                    <div>delete</div>
-                   <div>update</div>
+                   <div onClick={()=> history.push(`/bugs/edit/${id}`)}>update</div>
                </div>
             </div>
             <h1>Vaccines</h1>

@@ -17,6 +17,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Bugs} />
         <Route exact path="/bugs/new" component={BugForm} />
+        <Route exact path="/bugs/edit/:id" component={BugForm} />
         <Route exact path="/bugs/:id" component={Bug} />
         <Route exact path="/about" component={About} />
         <Route exact path="/kat" component={Kat} />
